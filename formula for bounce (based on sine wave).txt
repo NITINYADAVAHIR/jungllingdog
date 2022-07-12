@@ -1,0 +1,27 @@
+(time) 
+x_path
+[0.   0.05 0.11 0.16 0.21 0.27 0.32 0.37 0.43 0.48 0.53 0.59 0.64 0.69
+ 0.75 0.8  0.85 0.91 0.96 1.01 1.06 1.12 1.17 1.22 1.28 1.33 1.38 1.44
+ 1.49 1.54 1.6  1.65 1.7  1.76 1.81 1.86 1.92 1.97 2.02 2.08 2.13 2.18
+ 2.24 2.29 2.34 2.4  2.45 2.5  2.56 2.61 2.66 2.72 2.77 2.82 2.88 2.93
+ 2.98 3.04 3.09 3.14]
+x_movement: can be written as following expression
+	ball_rect.left += change_x (0.06)
+
+
+(amplitude) 
+y_path = sin(x_path) 
+[0.   0.05 0.11 0.16 0.21 0.26 0.31 0.36 0.41 0.46 0.51 0.55 0.6  0.64
+ 0.68 0.72 0.75 0.79 0.82 0.85 0.87 0.9  0.92 0.94 0.96 0.97 0.98 0.99
+ 1.   1.   1.   1.   0.99 0.98 0.97 0.96 0.94 0.92 0.9  0.87 0.85 0.82
+ 0.79 0.75 0.72 0.68 0.64 0.6  0.55 0.51 0.46 0.41 0.36 0.31 0.26 0.21
+ 0.16 0.11 0.05 0.  ]
+
+See first 30 values of y_path : 0 to 1
+For first 30 values y_movement can be written as: 
+ 	ball_rect.top += change_x * 1   (first 10)			say 0.06
+	ball_rect.top += change_x * 1/2 (next  10)			say 0.03
+	ball_rect.top += change_x * 1/4 (last  10)			say 0.015
+
+10*0.06 +  10*0.03 + 10*0.015 = 1.05
+So y movement by formula matches the y_path of sine wave
